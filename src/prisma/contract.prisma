@@ -34,3 +34,8 @@ model Participant {
 
 }
 
+model Availability {
+  id:             Int                   @id @default(uuid())
+  slotTime:       TimestamptzString 
+  participantId   Participant           @relation(fields: [participantId], references: [id], onDelete: Cascade)
+}
