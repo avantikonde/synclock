@@ -1,21 +1,36 @@
 // use prisma-8
 
-model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  username  String?
-  name      String?
-  posts     Post[]
-  createdAt TimestamptzString @default(now())
-  updatedAt temporal.updatedAtString()
+enum EventStatus {
+  POLLING
+  ACTIVE
+  COMPLETED
+  CANCELLED
 }
 
-model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  content   String?
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  Int
-  createdAt TimestamptzString @default(now())
-  updatedAt temporal.updatedAtString()
+model Event {
+  id            String       @id @default(uuid())
+  title         String
+  description   String?
+  slug          String       @unique
+  hostKey       String?      @unique
+  duration      Int
+  startDate     DateTime
+  endDate       DateTime
+  startHour     Int
+  endHour       Int
+  status        EventStatus  @default("POLLING")
+  inviteeLimit  Int
+  location      String
+  hostName      String
+
 }
+
+model Participant {
+  id        Int          @id @default(uuid())
+  name      String
+  email     String?      @unique
+  eventId   String
+  event     Event        @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+}
+
