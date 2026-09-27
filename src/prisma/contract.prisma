@@ -1,5 +1,4 @@
 // use prisma-8
-
 enum EventStatus {
   POLLING
   ACTIVE
@@ -8,34 +7,65 @@ enum EventStatus {
 }
 
 model Event {
-  id            String       @id @default(uuid())
-  title         String
-  description   String?
-  slug          String       @unique
-  hostKey       String?      @unique
-  duration      Int
-  startDate     DateTime
-  endDate       DateTime
-  startHour     Int
-  endHour       Int
-  status        EventStatus  @default("POLLING")
-  inviteeLimit  Int
-  location      String
-  hostName      String
-
+  id              String           @id @default(uuid())
+  title           String
+  description     String?
+  slug            String           @unique
+  hostKey         String?          @unique
+  duration        Int
+  startDate       DateTime
+  endDate         DateTime
+  startHour       Int
+  endHour         Int
+  status          EventStatus      @default(POLLING)
+  inviteeLimit    Int
+  location        String
+  hostName        String
+  participants    Participant[]
+  booking         Booking?
+  intakeQuestions IntakeQuestion[]
 }
 
 model Participant {
-  id        Int          @id @default(uuid())
-  name      String
-  email     String?      @unique
-  eventId   String
-  event     Event        @relation(fields: [eventId], references: [id], onDelete: Cascade)
-
+  id             String         @id @default(uuid())
+  name           String
+  email          String?
+  eventId        String
+  event          Event          @relation(fields:[eventId], references:[id], onDelete: Cascade)
+  availabilities Availability[]
+  answers        IntakeAnswer[]
 }
 
 model Availability {
-  id:             Int                   @id @default(uuid())
-  slotTime:       TimestamptzString 
-  participantId   Participant           @relation(fields: [participantId], references: [id], onDelete: Cascade)
+  id            String      @id @default(uuid())
+  slotTime      DateTime
+  participantId String
+  participant   Participant @relation(fields:[participantId], references:[id], onDelete: Cascade)
+}
+
+model Booking {
+  id          String   @id @default(uuid())
+  eventId     String   @unique
+  event       Event    @relation(fields:[eventId], references:[id], onDelete: Cascade)
+  startTime   DateTime
+  endTime     DateTime
+  meetingLink String?
+}
+
+model IntakeQuestion {
+  id         String         @id @default(uuid())
+  eventId    String
+  event      Event          @relation(fields:[eventId], references:[id], onDelete: Cascade)
+  question   String
+  isRequired Boolean        @default(false)
+  answers    IntakeAnswer[]
+}
+
+model IntakeAnswer {
+  id            String         @id @default(uuid())
+  questionId    String
+  question      IntakeQuestion @relation(fields:[questionId], references:[id], onDelete: Cascade)
+  participantId String
+  participant   Participant    @relation(fields:[participantId], references:[id], onDelete: Cascade)
+  answer        String
 }
