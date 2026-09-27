@@ -34,7 +34,7 @@ import type {
 } from '@prisma/orm-postgres/contract/types';
 
 export type StorageHash =
-  StorageHashBase<'911b5a2ad95d1680090c41d8249fbc7fcd4440bde226cd0e36281f3150a6474c'>;
+  StorageHashBase<'60f5ac360565a961dc67e68be5b2efd299103b1b0bb6bfed7c11a85e67b13f5f'>;
 export type ExecutionHash =
   ExecutionHashBase<'34f6281919d31231e38d00fa4fb97bfc6408d038e02198e48f817bbf4c787e58'>;
 export type ProfileHash =
@@ -244,14 +244,14 @@ export type FieldOutputTypes = {
   readonly public: {
     readonly Availability: {
       readonly id: CodecTypes['pg/text@1']['output'];
-      readonly slotTime: CodecTypes['pg/timestamptz-temporal@1']['output'];
+      readonly slotTime: CodecTypes['pg/timestamptz-string@1']['output'];
       readonly participantId: CodecTypes['pg/text@1']['output'];
     };
     readonly Booking: {
       readonly id: CodecTypes['pg/text@1']['output'];
       readonly eventId: CodecTypes['pg/text@1']['output'];
-      readonly startTime: CodecTypes['pg/timestamptz-temporal@1']['output'];
-      readonly endTime: CodecTypes['pg/timestamptz-temporal@1']['output'];
+      readonly startTime: CodecTypes['pg/timestamptz-string@1']['output'];
+      readonly endTime: CodecTypes['pg/timestamptz-string@1']['output'];
       readonly meetingLink: CodecTypes['pg/text@1']['output'] | null;
     };
     readonly Event: {
@@ -261,8 +261,8 @@ export type FieldOutputTypes = {
       readonly slug: CodecTypes['pg/text@1']['output'];
       readonly hostKey: CodecTypes['pg/text@1']['output'] | null;
       readonly duration: CodecTypes['pg/int4@1']['output'];
-      readonly startDate: CodecTypes['pg/timestamptz-temporal@1']['output'];
-      readonly endDate: CodecTypes['pg/timestamptz-temporal@1']['output'];
+      readonly startDate: CodecTypes['pg/timestamptz-string@1']['output'];
+      readonly endDate: CodecTypes['pg/timestamptz-string@1']['output'];
       readonly startHour: CodecTypes['pg/int4@1']['output'];
       readonly endHour: CodecTypes['pg/int4@1']['output'];
       readonly status: 'POLLING' | 'ACTIVE' | 'COMPLETED' | 'CANCELLED';
@@ -294,14 +294,14 @@ export type FieldInputTypes = {
   readonly public: {
     readonly Availability: {
       readonly id: CodecTypes['pg/text@1']['input'];
-      readonly slotTime: CodecTypes['pg/timestamptz-temporal@1']['input'];
+      readonly slotTime: CodecTypes['pg/timestamptz-string@1']['input'];
       readonly participantId: CodecTypes['pg/text@1']['input'];
     };
     readonly Booking: {
       readonly id: CodecTypes['pg/text@1']['input'];
       readonly eventId: CodecTypes['pg/text@1']['input'];
-      readonly startTime: CodecTypes['pg/timestamptz-temporal@1']['input'];
-      readonly endTime: CodecTypes['pg/timestamptz-temporal@1']['input'];
+      readonly startTime: CodecTypes['pg/timestamptz-string@1']['input'];
+      readonly endTime: CodecTypes['pg/timestamptz-string@1']['input'];
       readonly meetingLink: CodecTypes['pg/text@1']['input'] | null;
     };
     readonly Event: {
@@ -311,8 +311,8 @@ export type FieldInputTypes = {
       readonly slug: CodecTypes['pg/text@1']['input'];
       readonly hostKey: CodecTypes['pg/text@1']['input'] | null;
       readonly duration: CodecTypes['pg/int4@1']['input'];
-      readonly startDate: CodecTypes['pg/timestamptz-temporal@1']['input'];
-      readonly endDate: CodecTypes['pg/timestamptz-temporal@1']['input'];
+      readonly startDate: CodecTypes['pg/timestamptz-string@1']['input'];
+      readonly endDate: CodecTypes['pg/timestamptz-string@1']['input'];
       readonly startHour: CodecTypes['pg/int4@1']['input'];
       readonly endHour: CodecTypes['pg/int4@1']['input'];
       readonly status: 'POLLING' | 'ACTIVE' | 'COMPLETED' | 'CANCELLED';
@@ -345,19 +345,19 @@ export type StorageColumnTypes = {
     readonly availability: {
       readonly id: CodecTypes['pg/text@1']['output'];
       readonly participantId: CodecTypes['pg/text@1']['output'];
-      readonly slotTime: CodecTypes['pg/timestamptz-temporal@1']['output'];
+      readonly slotTime: CodecTypes['pg/timestamptz-string@1']['output'];
     };
     readonly booking: {
-      readonly endTime: CodecTypes['pg/timestamptz-temporal@1']['output'];
+      readonly endTime: CodecTypes['pg/timestamptz-string@1']['output'];
       readonly eventId: CodecTypes['pg/text@1']['output'];
       readonly id: CodecTypes['pg/text@1']['output'];
       readonly meetingLink: CodecTypes['pg/text@1']['output'] | null;
-      readonly startTime: CodecTypes['pg/timestamptz-temporal@1']['output'];
+      readonly startTime: CodecTypes['pg/timestamptz-string@1']['output'];
     };
     readonly event: {
       readonly description: CodecTypes['pg/text@1']['output'] | null;
       readonly duration: CodecTypes['pg/int4@1']['output'];
-      readonly endDate: CodecTypes['pg/timestamptz-temporal@1']['output'];
+      readonly endDate: CodecTypes['pg/timestamptz-string@1']['output'];
       readonly endHour: CodecTypes['pg/int4@1']['output'];
       readonly hostKey: CodecTypes['pg/text@1']['output'] | null;
       readonly hostName: CodecTypes['pg/text@1']['output'];
@@ -365,7 +365,7 @@ export type StorageColumnTypes = {
       readonly inviteeLimit: CodecTypes['pg/int4@1']['output'];
       readonly location: CodecTypes['pg/text@1']['output'];
       readonly slug: CodecTypes['pg/text@1']['output'];
-      readonly startDate: CodecTypes['pg/timestamptz-temporal@1']['output'];
+      readonly startDate: CodecTypes['pg/timestamptz-string@1']['output'];
       readonly startHour: CodecTypes['pg/int4@1']['output'];
       readonly status: 'POLLING' | 'ACTIVE' | 'COMPLETED' | 'CANCELLED';
       readonly title: CodecTypes['pg/text@1']['output'];
@@ -395,19 +395,19 @@ export type StorageColumnInputTypes = {
     readonly availability: {
       readonly id: CodecTypes['pg/text@1']['input'];
       readonly participantId: CodecTypes['pg/text@1']['input'];
-      readonly slotTime: CodecTypes['pg/timestamptz-temporal@1']['input'];
+      readonly slotTime: CodecTypes['pg/timestamptz-string@1']['input'];
     };
     readonly booking: {
-      readonly endTime: CodecTypes['pg/timestamptz-temporal@1']['input'];
+      readonly endTime: CodecTypes['pg/timestamptz-string@1']['input'];
       readonly eventId: CodecTypes['pg/text@1']['input'];
       readonly id: CodecTypes['pg/text@1']['input'];
       readonly meetingLink: CodecTypes['pg/text@1']['input'] | null;
-      readonly startTime: CodecTypes['pg/timestamptz-temporal@1']['input'];
+      readonly startTime: CodecTypes['pg/timestamptz-string@1']['input'];
     };
     readonly event: {
       readonly description: CodecTypes['pg/text@1']['input'] | null;
       readonly duration: CodecTypes['pg/int4@1']['input'];
-      readonly endDate: CodecTypes['pg/timestamptz-temporal@1']['input'];
+      readonly endDate: CodecTypes['pg/timestamptz-string@1']['input'];
       readonly endHour: CodecTypes['pg/int4@1']['input'];
       readonly hostKey: CodecTypes['pg/text@1']['input'] | null;
       readonly hostName: CodecTypes['pg/text@1']['input'];
@@ -415,7 +415,7 @@ export type StorageColumnInputTypes = {
       readonly inviteeLimit: CodecTypes['pg/int4@1']['input'];
       readonly location: CodecTypes['pg/text@1']['input'];
       readonly slug: CodecTypes['pg/text@1']['input'];
-      readonly startDate: CodecTypes['pg/timestamptz-temporal@1']['input'];
+      readonly startDate: CodecTypes['pg/timestamptz-string@1']['input'];
       readonly startHour: CodecTypes['pg/int4@1']['input'];
       readonly status: 'POLLING' | 'ACTIVE' | 'COMPLETED' | 'CANCELLED';
       readonly title: CodecTypes['pg/text@1']['input'];
@@ -449,8 +449,8 @@ export namespace Models {
     slug: CodecTypes['pg/text@1']['output'];
     hostKey: CodecTypes['pg/text@1']['output'] | null;
     duration: CodecTypes['pg/int4@1']['output'];
-    startDate: CodecTypes['pg/timestamptz-temporal@1']['output'];
-    endDate: CodecTypes['pg/timestamptz-temporal@1']['output'];
+    startDate: CodecTypes['pg/timestamptz-string@1']['output'];
+    endDate: CodecTypes['pg/timestamptz-string@1']['output'];
     startHour: CodecTypes['pg/int4@1']['output'];
     endHour: CodecTypes['pg/int4@1']['output'];
     status: 'POLLING' | 'ACTIVE' | 'COMPLETED' | 'CANCELLED';
@@ -474,7 +474,7 @@ export namespace Models {
   };
   export type public_Availability = {
     id: CodecTypes['pg/text@1']['output'];
-    slotTime: CodecTypes['pg/timestamptz-temporal@1']['output'];
+    slotTime: CodecTypes['pg/timestamptz-string@1']['output'];
     participantId: CodecTypes['pg/text@1']['output'];
     participant: public_Participant;
     readonly [RelationKeys]?: 'participant';
@@ -482,8 +482,8 @@ export namespace Models {
   export type public_Booking = {
     id: CodecTypes['pg/text@1']['output'];
     eventId: CodecTypes['pg/text@1']['output'];
-    startTime: CodecTypes['pg/timestamptz-temporal@1']['output'];
-    endTime: CodecTypes['pg/timestamptz-temporal@1']['output'];
+    startTime: CodecTypes['pg/timestamptz-string@1']['output'];
+    endTime: CodecTypes['pg/timestamptz-string@1']['output'];
     meetingLink: CodecTypes['pg/text@1']['output'] | null;
     event: public_Event;
     readonly [RelationKeys]?: 'event';
@@ -546,7 +546,7 @@ type ContractBase = Omit<
                 };
                 readonly slotTime: {
                   readonly nativeType: 'timestamptz';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly codecId: 'pg/timestamptz-string@1';
                   readonly nullable: false;
                 };
                 readonly participantId: {
@@ -594,12 +594,12 @@ type ContractBase = Omit<
                 };
                 readonly startTime: {
                   readonly nativeType: 'timestamptz';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly codecId: 'pg/timestamptz-string@1';
                   readonly nullable: false;
                 };
                 readonly endTime: {
                   readonly nativeType: 'timestamptz';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly codecId: 'pg/timestamptz-string@1';
                   readonly nullable: false;
                 };
                 readonly meetingLink: {
@@ -660,12 +660,12 @@ type ContractBase = Omit<
                 };
                 readonly startDate: {
                   readonly nativeType: 'timestamptz';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly codecId: 'pg/timestamptz-string@1';
                   readonly nullable: false;
                 };
                 readonly endDate: {
                   readonly nativeType: 'timestamptz';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly codecId: 'pg/timestamptz-string@1';
                   readonly nullable: false;
                 };
                 readonly startHour: {
@@ -927,7 +927,7 @@ type ContractBase = Omit<
                 readonly nullable: false;
                 readonly type: {
                   readonly kind: 'scalar';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly codecId: 'pg/timestamptz-string@1';
                 };
               };
               readonly participantId: {
@@ -973,14 +973,14 @@ type ContractBase = Omit<
                 readonly nullable: false;
                 readonly type: {
                   readonly kind: 'scalar';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly codecId: 'pg/timestamptz-string@1';
                 };
               };
               readonly endTime: {
                 readonly nullable: false;
                 readonly type: {
                   readonly kind: 'scalar';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly codecId: 'pg/timestamptz-string@1';
                 };
               };
               readonly meetingLink: {
@@ -1044,14 +1044,14 @@ type ContractBase = Omit<
                 readonly nullable: false;
                 readonly type: {
                   readonly kind: 'scalar';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly codecId: 'pg/timestamptz-string@1';
                 };
               };
               readonly endDate: {
                 readonly nullable: false;
                 readonly type: {
                   readonly kind: 'scalar';
-                  readonly codecId: 'pg/timestamptz-temporal@1';
+                  readonly codecId: 'pg/timestamptz-string@1';
                 };
               };
               readonly startHour: {

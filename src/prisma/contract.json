@@ -75,7 +75,7 @@
               "slotTime": {
                 "nullable": false,
                 "type": {
-                  "codecId": "pg/timestamptz-temporal@1",
+                  "codecId": "pg/timestamptz-string@1",
                   "kind": "scalar"
                 }
               }
@@ -119,7 +119,7 @@
               "endTime": {
                 "nullable": false,
                 "type": {
-                  "codecId": "pg/timestamptz-temporal@1",
+                  "codecId": "pg/timestamptz-string@1",
                   "kind": "scalar"
                 }
               },
@@ -147,7 +147,7 @@
               "startTime": {
                 "nullable": false,
                 "type": {
-                  "codecId": "pg/timestamptz-temporal@1",
+                  "codecId": "pg/timestamptz-string@1",
                   "kind": "scalar"
                 }
               }
@@ -211,7 +211,7 @@
               "endDate": {
                 "nullable": false,
                 "type": {
-                  "codecId": "pg/timestamptz-temporal@1",
+                  "codecId": "pg/timestamptz-string@1",
                   "kind": "scalar"
                 }
               },
@@ -267,7 +267,7 @@
               "startDate": {
                 "nullable": false,
                 "type": {
-                  "codecId": "pg/timestamptz-temporal@1",
+                  "codecId": "pg/timestamptz-string@1",
                   "kind": "scalar"
                 }
               },
@@ -683,7 +683,7 @@
                   "nullable": false
                 },
                 "slotTime": {
-                  "codecId": "pg/timestamptz-temporal@1",
+                  "codecId": "pg/timestamptz-string@1",
                   "nativeType": "timestamptz",
                   "nullable": false
                 }
@@ -727,7 +727,7 @@
             "booking": {
               "columns": {
                 "endTime": {
-                  "codecId": "pg/timestamptz-temporal@1",
+                  "codecId": "pg/timestamptz-string@1",
                   "nativeType": "timestamptz",
                   "nullable": false
                 },
@@ -747,7 +747,7 @@
                   "nullable": true
                 },
                 "startTime": {
-                  "codecId": "pg/timestamptz-temporal@1",
+                  "codecId": "pg/timestamptz-string@1",
                   "nativeType": "timestamptz",
                   "nullable": false
                 }
@@ -805,7 +805,7 @@
                   "nullable": false
                 },
                 "endDate": {
-                  "codecId": "pg/timestamptz-temporal@1",
+                  "codecId": "pg/timestamptz-string@1",
                   "nativeType": "timestamptz",
                   "nullable": false
                 },
@@ -845,7 +845,7 @@
                   "nullable": false
                 },
                 "startDate": {
-                  "codecId": "pg/timestamptz-temporal@1",
+                  "codecId": "pg/timestamptz-string@1",
                   "nativeType": "timestamptz",
                   "nullable": false
                 },
@@ -1118,7 +1118,7 @@
         "kind": "postgres-schema"
       }
     },
-    "storageHash": "911b5a2ad95d1680090c41d8249fbc7fcd4440bde226cd0e36281f3150a6474c"
+    "storageHash": "60f5ac360565a961dc67e68be5b2efd299103b1b0bb6bfed7c11a85e67b13f5f"
   },
   "execution": {
     "executionHash": "34f6281919d31231e38d00fa4fb97bfc6408d038e02198e48f817bbf4c787e58",

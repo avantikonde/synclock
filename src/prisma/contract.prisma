@@ -13,8 +13,8 @@ model Event {
   slug            String           @unique
   hostKey         String?          @unique
   duration        Int
-  startDate       DateTime
-  endDate         DateTime
+  startDate       TimestamptzString
+  endDate         TimestamptzString
   startHour       Int
   endHour         Int
   status          EventStatus      @default(POLLING)
@@ -38,7 +38,7 @@ model Participant {
 
 model Availability {
   id            String      @id @default(uuid())
-  slotTime      DateTime
+  slotTime      TimestamptzString
   participantId String
   participant   Participant @relation(fields:[participantId], references:[id], onDelete: Cascade)
 }
@@ -47,8 +47,8 @@ model Booking {
   id          String   @id @default(uuid())
   eventId     String   @unique
   event       Event    @relation(fields:[eventId], references:[id], onDelete: Cascade)
-  startTime   DateTime
-  endTime     DateTime
+  startTime   TimestamptzString
+  endTime     TimestamptzString
   meetingLink String?
 }
 
