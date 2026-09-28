@@ -57,7 +57,7 @@ export async function POST(req: Request) {
 
         return Response.json(
             {
-                success: true,
+                success: true, 
                 slug: newEvent.slug,
                 hostKey: newEvent.hostKey,
                 eventId: newEvent.id,
