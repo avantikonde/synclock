@@ -17,10 +17,10 @@ const LOCATION_PRESETS = [
 ];
 
 const DURATION_PRESETS = [
-  { value: 15, label: '15 min', hint: 'Quick Catchup' },
-  { value: 30, label: '30 min', hint: 'Most Popular ⚡' },
-  { value: 45, label: '45 min', hint: 'In-Depth' },
-  { value: 60, label: '60 min', hint: 'Full Session' },
+  { value: 15, label: '15 min', hint: '' },
+  { value: 30, label: '30 min', hint: '' },
+  { value: 45, label: '45 min', hint: '' },
+  { value: 60, label: '60 min', hint: ''},
 ];
 
 export default function CreateEventPage() {
