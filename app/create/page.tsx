@@ -247,7 +247,7 @@ export default function CreateEventPage() {
                   required
                   value={formData.hostName}
                   onChange={handleChange}
-                  placeholder="Rahul S."
+                  placeholder="Alice"
                   className="w-full bg-transparent border border-neutral-200 rounded-xl px-3.5 py-2.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-neutral-900 transition"
                 />
               </div>
