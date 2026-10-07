@@ -16,9 +16,8 @@ export async function GET(
     // Search the database for the event matching this slug
     // Access the 'Event' table/model in the 'public' schema via the database instance
     const event = await db.orm.public.Event
-      // Add a filter condition to find records where the database 'slug' matches our variable
       .where({ slug })
-      // Retrieve only the very first record that matches the condition (or null if none match)
+      .include('participants', (p) => p.include('availabilities'))
       .first();
 
     // Check if the 'event' variable is falsy (null or undefined), meaning no matching record was found
