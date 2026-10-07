@@ -1,7 +1,8 @@
+import { NextRequest } from 'next/server';
 import { db } from '@/src/prisma/db';
 
 export async function POST(
-  req: Request,
+  req: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   try {

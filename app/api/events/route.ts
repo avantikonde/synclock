@@ -1,7 +1,8 @@
 import { randomBytes } from 'crypto';
+import { NextRequest } from 'next/server';
 import { db } from '@/src/prisma/db';
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
 

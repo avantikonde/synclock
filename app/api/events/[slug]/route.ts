@@ -1,11 +1,8 @@
-// Import the database connection instance from the local file path '@/src/prisma/db'
+import { NextRequest } from 'next/server';
 import { db } from '@/src/prisma/db';
 
-// Export an asynchronous GET function, which acts as an HTTP GET route handler in Next.js
 export async function GET(
-  // The first parameter 'req' represents the incoming HTTP Request object
-  req: Request,
-  // The second parameter is the route context containing dynamic route parameters (a Promise yielding a 'slug' string)
+  req: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   // Start a try-catch block to handle any potential errors during database operations
