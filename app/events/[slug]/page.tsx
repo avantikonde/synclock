@@ -389,7 +389,7 @@ export default function EventVotingPage() {
                   : 'text-neutral-600 hover:text-neutral-900'
               }`}
             >
-              ✏️ My Availability
+              My Availability
             </button>
             <button
               type="button"
@@ -400,7 +400,7 @@ export default function EventVotingPage() {
                   : 'text-neutral-600 hover:text-neutral-900'
               }`}
             >
-              <span>🔥 Group Overlap</span>
+              <span>Group Overlap</span>
               {totalParticipants > 0 && (
                 <span className="text-[10px] bg-neutral-900 text-white px-1.5 py-0.2 rounded-full">
                   {totalParticipants}
