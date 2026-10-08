@@ -11,7 +11,6 @@ export async function POST(
 
     const { name, email, selectedSlots, participantId } = body;
 
-    // 1. Validate inputs
     if (!name || typeof name !== 'string' || !name.trim()) {
       return Response.json(
         { error: 'Please enter your name to submit availability' },
@@ -26,7 +25,6 @@ export async function POST(
       );
     }
 
-    // 2. Fetch the Event
     const event = await db.orm.public.Event.where({ slug }).first();
     if (!event) {
       return Response.json({ error: 'Event not found' }, { status: 404 });
@@ -39,7 +37,6 @@ export async function POST(
       );
     }
 
-    // 3. Find or Create the Participant
     let participant = null;
 
     if (participantId) {
